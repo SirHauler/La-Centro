@@ -1,0 +1,79 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}Tienda La Centroamericana {% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel = "stylesheet" type = "text/css" href="{{ url_for('static', filename = 'css/casa.css') }}">
+	<style type="text/css">
+
+	.mySlides {display:none;}
+
+	body
+	{
+		background-color: #d8e4e8;
+
+	}
+	h1
+	{
+		text-align: center;
+		float: center;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 300%;
+
+	}	
+
+
+
+
+
+
+	</style>
+	
+</head>
+<body>
+	<h1> Tienda La Centroamericana </h1>
+
+
+<div class="w3-content w3-display-container">
+	<img class="mySlides" src="{{url_for('static', filename = 'wallhaven-nrkdem.jpg')}}" style="width:100%">
+  	<img class="mySlides" src="{{url_for('static', filename = 'icelandp2.jpg')}}" style="width:100%">
+  	<img class="mySlides" src="{{url_for('static', filename = 'wallhaven-83kk62.jpg')}}" style="width:100%">
+  	<img class="mySlides" src="{{url_for('static', filename = 'wallhaven-4lvrvr.jpg')}}" style="width:100%">
+  	<img class="mySlides" src="{{url_for('static', filename = 'wallhaven-nzlymy.jpg')}}" style="width:100%">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+</body>
+</html>
+
+{% endblock %}
